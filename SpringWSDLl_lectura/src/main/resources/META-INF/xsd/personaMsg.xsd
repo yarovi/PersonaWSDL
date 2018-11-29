@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema
-	targetNamespace="http://webservice.yariovi.com.pe/entity/ws/types"
+	targetNamespace="http://webservice.yarovi.pe/entity/ws/types"
 	elementFormDefault="qualified"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://webservice.yariovi.com.pe/entity/ws/types">
+	xmlns="http://webservice.yarovi.pe/entity/ws/types">
 	<xsd:include schemaLocation="personaType.xsd"></xsd:include>
 
 	<xsd:element name="buscarRequest">
@@ -27,8 +27,10 @@
 
 
 	<xsd:complexType name="listaPersonaType">
+
 		<xsd:sequence>
-			<xsd:element name="persona" type="PersonaType"></xsd:element>
+			<xsd:element name="persona" type="PersonaType"
+				minOccurs="0" maxOccurs="unbounded"></xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
 </xsd:schema>
