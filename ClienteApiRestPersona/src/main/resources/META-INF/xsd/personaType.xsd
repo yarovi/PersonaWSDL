@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://webservice.yarovi.com/entity/ws/types"
+	elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://webservice.yarovi.com/entity/ws/types">
+
+	<xsd:complexType name="PersonaType">
+
+		<xsd:sequence>
+			<xsd:element name="id" type="xsd:int"></xsd:element>
+			<xsd:element name="nombre" type="xsd:string"></xsd:element>
+			<xsd:element name="edad" type="xsd:int"></xsd:element>
+			<xsd:element name="direccion" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	targetNamespace="http://webservice.yarovi.com/entity/ws/types"
+	elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://webservice.yarovi.com/entity/ws/types">
+
+	<xsd:include schemaLocation="personaType.xsd"></xsd:include>
+
+	<xsd:element name="buscarRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="id" type="xsd:int" minOccurs="0"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+
+	<xsd:element name="buscarResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="listaPersona" type="listaPersonaType"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+
+	<xsd:complexType name="listaPersonaType">
+
+		<xsd:sequence>
+			<xsd:element name="persona" type="PersonaType"
+				minOccurs="0" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

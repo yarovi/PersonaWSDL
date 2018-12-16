@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="consoleLog" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%5p] [%d{dd-MM-yyyy HH:mm:ss.SSS}] (%F:%L) - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="fileLog" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="categoriaws.log"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%5p] [%d{dd-MM-yyyy HH:mm:ss.SSS}] (%F:%L) - %m%n" />
+		</layout>
+	</appender>
+	<!-- END Appenders -->
+
+	<!-- Application Loggers -->
+	<logger name="pe.com.yariovi.webservice">
+		<level value="info" />
+	</logger>
+
+	<!-- 3rdparty Loggers -->
+	<logger name="org.springframework.web">
+		<level value="INFO" />
+	</logger>
+
+	<!-- Root Logger -->
+	<root>
+		<priority value="INFO" />
+		<appender-ref ref="consoleLog" />
+		<appender-ref ref="fileLog" />
+	</root>
+</log4j:configuration>
